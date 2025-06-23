@@ -1,9 +1,9 @@
 const {conexao} = require('../conexao.js')
 
-async function editarParcialmenteCliente(codigo, campo, valor){
+async function editarParcialmenteItemPedido(codigo, campo, valor){
     const data = [valor, codigo]
     
-    const colunasPermitidas = ['nome', 'email', 'telefone', 'id_endereco', 'id_status', 'limite']; // Adicione as colunas permitidas
+    const colunasPermitidas = ['qnt']; // Adicione as colunas permitidas
     if (!colunasPermitidas.includes(campo)) {
         throw new Error('Coluna inválida');
     }
@@ -22,4 +22,4 @@ async function editarParcialmenteCliente(codigo, campo, valor){
       }
 }
 
-module.exports = {editarParcialmenteCliente}
+module.exports = {editarParcialmenteItemPedido}

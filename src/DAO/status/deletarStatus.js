@@ -1,13 +1,13 @@
 const {conexao} = require('../conexao')
 
-async function deletarStatus(codigo){
+async function deletarStatus(id){
     
     const sql = `DELETE FROM tbl_status WHERE codigo = ?`
     const conn = await conexao()
     
     try {
         // Executar a consulta
-        const [results] = await conn.query(sql,[codigo]);
+        const [results] = await conn.query(sql,[id]);
 
         await conn.end()
         return results

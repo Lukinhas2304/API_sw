@@ -1,8 +1,8 @@
 const {conexao} = require('../conexao.js')
 
-async function editarIntegralmenteCategoria(infos, codigo){
+async function editarIntegralmenteProdutos(infos, codigo){
 
-    const sql = `UPDATE tbl_categoria SET id = ?, nome = ? WHERE codigo = ${codigo} ;`
+    const sql = `UPDATE tbl_categoria SET codigo = ?,  nome = ?     id_categoria = ?,   preco = ? WHERE codigo = ${codigo} ;`
     const conn = await conexao()
     
     try {
@@ -16,4 +16,4 @@ async function editarIntegralmenteCategoria(infos, codigo){
       }
 }
 
-module.exports = {editarIntegralmenteCategoria}
+module.exports = {editarIntegralmenteProdutos}

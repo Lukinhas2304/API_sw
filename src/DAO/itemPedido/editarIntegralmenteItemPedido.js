@@ -2,7 +2,7 @@ const {conexao} = require('../conexao.js')
 
 async function editarIntegralmenteItemPedido(infos, codigo){
 
-    const sql = `UPDATE tbl_categoria SET qnt = ? WHERE codigo = ${codigo} ;`
+    const sql = `UPDATE tbl_categoria SET id  = ?, id_pedido = ?,  id_produto = ?,   qnt = ? WHERE codigo = ${codigo} ;`
     const conn = await conexao()
     
     try {
